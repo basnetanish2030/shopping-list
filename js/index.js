@@ -2,6 +2,12 @@ var shoppingList = [];
 const itemInput = document.getElementById("itemInput");
 const listOutput = document.getElementById("listOutput");
 
+itemInput.addEventListener("keypress", (e) => {
+    if(e.key === 'Enter'){
+        addList();
+    }
+});
+
 // Function to add an item to the shopping list
 function addList(){
     const item = itemInput.value;
