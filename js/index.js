@@ -31,9 +31,6 @@ function displayList() {
     }
 }
 
-function clearList(){
-        shoppingList = [];
-        displayList();
-}
+
 
 displayList();
