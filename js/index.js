@@ -26,15 +26,30 @@ function displayList() {
         listItem.setAttribute("class","card-item");
         listItem.innerHTML = 'The shopping list is empty.';
         listOutput.appendChild(listItem);
-    } 
+    }
     else {
         shoppingList.forEach((item, index) => {
-        const listItem = document.createElement('li');
-        listItem.setAttribute("class","card-item");
-        listItem.innerHTML = `${index + 1}. ${item}`;
-        listOutput.appendChild(listItem);
+            const listItem = document.createElement('li');
+            listItem.setAttribute("class","card-item");
+            listItem.innerHTML = `${index + 1}. ${item}`;
+
+            //Creating Checkbox for each items
+            const checkStatus = document.createElement('input');
+            checkStatus.setAttribute("type", "checkbox");
+            checkStatus.setAttribute("name", "check");
+            //checkStatus.addEventListener("click", removeChecked(index));
+
+            //Attaching each components together
+            listItem.appendChild(checkStatus);
+            listOutput.appendChild(listItem);
+            
       });
     }
+}
+
+function removeChecked(index){
+        shoppingList = shoppingList.splice(index, 1);
+        displayList();
 }
 
 function clearList(){

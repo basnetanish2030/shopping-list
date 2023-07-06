@@ -82,3 +82,11 @@ body{
     margin: 10px;
     justify-content: center;
 }
+
+[name='check']{
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    margin-left: auto;
+    cursor: pointer; 
+}
